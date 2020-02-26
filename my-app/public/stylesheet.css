@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: slategrey;
+    background-color:#6885A0;
     position: fixed;
     top: 0;
     width: 100%;
@@ -33,7 +33,7 @@
   }
   
   .active {
-    background-color: gray;
+    background-color: #957D0E;
   }
   /*coffee header image*/
   div.a {
@@ -262,7 +262,7 @@
   display: block;
   width: 100%;
   border-top: 25px solid white;
-  background: slategray;
+  background: #6885A0;
   padding: 16px;
   left: 0;
   bottom: 0;

@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // inline css things...probably not the best practise? but *shrug* Future Me will fix this later//
@@ -47,7 +46,7 @@ class App extends React.Component{
   </nav>
   <header>
     <div className="a" id="home">
-      <img src="images/Coffeestir.gif" style={style}/>
+      <img src="images/Coffeestir.gif" alt={"coffeeStir"} style={style}/>
       <h6 style={style2}>
         Freelance Web Developer | Coffee Lover | Casual Toronto Raptors Fan
       </h6>
@@ -59,7 +58,7 @@ class App extends React.Component{
     <h1><span>ABOUT ME</span></h1>
   </div>
   <div className="b">
-    <img src="images/baliMorningUserpic.jpg" alt="Userpic" style={style3}/>
+    <img src="images/baliMorningUserpic.jpg" alt={"Userpic"} style={style3}/>
     <br/>
     <p>I'm a freelance web developer with a love for food, coffee and learning. Writing code and designing websites is actually my second career, before doing this I was an accounts manager for a neuro-technology company.
       <br/><br/> I'm a big believer in technology and its ablitity to connect people, and how when it comes to learning and mastering skills in technology, there is no discrimination, just a commitment of time and a willingness to learn. 
@@ -77,9 +76,9 @@ class App extends React.Component{
   <div className="c" id="Portfolio">
     <h1><span>PORTFOLIO</span></h1>
     <p style={{textAlign: "center"}}> Click on the image to expand!</p>
-    <img className="myImages" id="myImg" src="images/cupcakewebdesign.png" alt="Cupcake Store - WireFrame One | Sept '19" style={style4}/>
-    <img className="myImages" id="myImg" src="images/FS1000_GroupProject.png" alt="Vacation Rental Website | Oct '19" style={style4}/>
-    <img className="myImages" id="myImg" src="images/dogmodelwebsite.png" alt="Dog Model Portfolio Website | Sept '19" style={style4}/>
+    <img className="myImages" id="myImg" src="images/cupcakewebdesign.png" alt={"Cupcake Store - WireFrame One | Sept '19"} style={style4}/>
+    <img className="myImages" id="myImg" src="images/FS1000_GroupProject.png" alt={"Vacation Rental Website | Oct '19"} style={style4}/>
+    <img className="myImages" id="myImg" src="images/dogmodelwebsite.png" alt={"Dog Model Portfolio Website | Sept '19"} style={style4}/>
     <div id="myModal" className="modal">
       <span className="close">&times;</span>
       <img className="modal-content" id="img01"/>
@@ -87,7 +86,7 @@ class App extends React.Component{
     </div>
   </div>
     <div className="footer">
-<a href="https://github.com/RosemaryLy"><img src="images/GitHub-Mark-64px.png" imgheight={"25px"}/> </a>
+<a href="https://github.com/RosemaryLy"><img src="images/GitHub-Mark-64px.png" alt ={"GitHubLogo"} style={{height:"25px"}}/> </a>
 Rosemary Ly
 </div>  
 </div>
