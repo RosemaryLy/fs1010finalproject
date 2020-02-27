@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Form from './ContactForm';
 
 // inline css things...probably not the best practise? but *shrug* Future Me will fix this later//
 let style ={
@@ -14,8 +15,7 @@ let style2 ={
   padding: '4px', 
   backgroundColor: 'transparent', 
   fontWeight: 'bold', 
-  color: '#fff', 
-  fontWeight: '600',
+  color: '#fff',
 };
 let style3 = {
   borderRadius:'50%',
@@ -84,6 +84,12 @@ class App extends React.Component{
       <img className="modal-content" id="img01"/>
       <div id="caption"></div>
     </div>
+  </div>
+  <div className="c" id ="Contact">
+   <h1><span>Contact Me</span></h1> 
+  </div>
+  <div className="container">
+  <Form/>
   </div>
     <div className="footer">
 <a href="https://github.com/RosemaryLy"><img src="images/GitHub-Mark-64px.png" alt ={"GitHubLogo"} style={{height:"25px"}}/> </a>
