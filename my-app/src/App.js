@@ -60,7 +60,7 @@ class App extends React.Component{
   <div className="b">
     <img src="images/baliMorningUserpic.jpg" alt={"Userpic"} style={style3}/>
     <br/>
-    <p>I'm a freelance web developer with a love for food, coffee and learning. Writing code and designing websites is actually my second career, before doing this I was an accounts manager for a neuro-technology company.
+    <p>I'm a freelance web developer with a love for food, coffee and learning. Writing code and designing websites is actually my second career, before doing this I was an accounts manager.
       <br/><br/> I'm a big believer in technology and its ablitity to connect people, and how when it comes to learning and mastering skills in technology, there is no discrimination, just a commitment of time and a willingness to learn. 
       <br/><br/>Young or old, as long as one is willing they can master anything. Trust me, for a brief while one of my jobs was teaching people how to clear their cookies and cache over the phone.
 
