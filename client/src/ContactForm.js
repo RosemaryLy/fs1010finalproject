@@ -1,49 +1,63 @@
-import React from 'react';
+import React,  { useState } from 'react';
 import './App.css';
 
-function handleSubmit(event) {
-    event.preventDefault();
-    console.log(firstName,lastName,email,message);
-    let url = "http://localhost:8000/login"
-    fetch(url, {
-      method: 'POST',
-      body: JSON.stringify({firstName,lastName,email, message})
-    })
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(error => console.log(error))
-  }
+function Form() {
+    const [firstName, setFirstName] = useState();
+    const [lastName, setLastName] = useState();
+    const [email, setEmail] = useState();
+    const [message, setMessage] = useState ();
+  
 
-class Form extends React.Component {
+      
+      function handleSubmit(event) {
+        event.preventDefault();
+        let url = "http://localhost:8080/"
+        fetch(url, {
+          method: 'POST',
+          mode: 'cors',
+          headers: { 'Accept': 'application/json',
+          'Content-type': 'application/json'},
+          body: JSON.stringify({firstName,lastName,email, message})
+        })
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
+      }
 
-    state= {
-        firstName: "",
-        lastName:"",
-        email:"",
-        message:"",
-    }
-    render(){
+      function handleFirstNameChange(event) {
+        setFirstName( event.target.value );
+      }
+    
+      function handleLastNameChange(event) {
+        setLastName( event.target.value)
+      }
+    
+      function handleEmailChange(event) {
+        setEmail (event.target.value)
+      }
+    
+      function handleMessageChange(event) {
+        setMessage( event.target.value)
+      }
+    
+                
         return (
-            <form>
+            <form onSubmit={handleSubmit}>
                <input placeholder="First name" type="text"
-               value ={this.state.firstName} 
-               onChange={event =>this.setState({firstName: event.target.value})} required/>
+               onChange={handleFirstNameChange} required/>
 
 <input placeholder="Last name" type="text"
-               value ={this.state.lirstName} 
-               onChange={event =>this.setState({lastName: event.target.value})} required/>
+               onChange={handleLastNameChange}required/>
 
 <input placeholder="email" type="email"
-               value ={this.state.email} 
-               onChange={event =>this.setState({email: event.target.value})}required/>
+               onChange={handleEmailChange}required/>
 
 <input placeholder="Write me a message" type="text"
-               value ={this.state.message} 
-               onChange={event =>this.setState({message: event.target.value})}/>
+               onChange={handleMessageChange}/>
 
-<input type="submit" value="Submit" onSubmit={handleSubmit}/>
+<input type="submit"/>
             </form>
         )
     }
-}
+
 export default Form; 
