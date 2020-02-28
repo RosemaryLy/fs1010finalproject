@@ -11,7 +11,7 @@ function Form() {
       
       function handleSubmit(event) {
         event.preventDefault();
-        let url = "http://localhost:8080/"
+        let url = "http://localhost:8080/contactme"
         fetch(url, {
           method: 'POST',
           mode: 'cors',

@@ -11,12 +11,17 @@ let path = require('path');
 let fs = require('fs');
 
 // Apply middleware//
-app.use(cors());
+app.use(cors({origin: 'http://localhost:3000'}));
 
 app.use(express.json()); // Allows us to read JSON sent in `req.body`//
 
 app.use(router); // Apply our router as middleware
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 //This is so when the data in the form is submitted, it actually gets put in the JSON as an array object. 
 app.use(express.urlencoded({ extended: false }));
@@ -62,7 +67,7 @@ function validateContactInfo(request, response, next) {
 
 //Route for the general enquiry form landing page//
 app.get('/contactme', function (request, response) {
-  response.render('/');
+  response.send('I am alive!');
 });
 
 //Route to create an entry when the user submits their form.//
