@@ -3,7 +3,6 @@ import './App.css';
 import Form from './ContactForm';
 
 
-
 // inline css things...probably not the best practise? but *shrug* Future Me will fix this later//
 let style ={
   width:"100%",
@@ -30,8 +29,7 @@ let style3 = {
 let style4 ={
   width:"300px",
   height:"200px",
-};
-
+}
 // end of css things//
 
 class App extends React.Component{
@@ -76,16 +74,12 @@ class App extends React.Component{
   </div>
   
   <div className="c" id="Portfolio">
-    <h1><span>PORTFOLIO</span></h1>
-    <p style={{textAlign: "center"}}> Click on the image to expand!</p>
+  <h1><span>PORTFOLIO</span></h1>
+    <p style={{textAlign: "center"}}> Just a small sample</p>
     <img className="myImages" id="myImg" src="images/cupcakewebdesign.png" alt={"Cupcake Store - WireFrame One | Sept '19"} style={style4}/>
     <img className="myImages" id="myImg" src="images/FS1000_GroupProject.png" alt={"Vacation Rental Website | Oct '19"} style={style4}/>
     <img className="myImages" id="myImg" src="images/dogmodelwebsite.png" alt={"Dog Model Portfolio Website | Sept '19"} style={style4}/>
-    <div id="myModal" className="modal">
-      <span className="close">&times;</span>
-      <img className="modal-content" id="img01" alt =""/>
-      <div id="caption"></div>
-    </div>
+
   </div>
   <div className="c" id ="Contact">
    <h1><span>Contact Me</span></h1> 
