@@ -11,12 +11,11 @@ function Form() {
       
       function handleSubmit(event) {
         event.preventDefault();
-        let url = "http://localhost:8080/contactme"
-        fetch(url, {
+        
+       fetch("http://localhost:8080/contactme", {
           method: 'POST',
-          mode: 'cors',
-          headers: { 'Accept': 'application/json',
-          'Content-type': 'application/json'},
+          headers: {
+          'Content-type': 'application/x-www-form-urlencoded'},
           body: JSON.stringify({firstName,lastName,email, message})
         })
         .then(response => response.json())

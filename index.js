@@ -5,26 +5,24 @@ let app = express();
 let port = 8080;
 let cors = require('cors');
 let router = express.Router();
-
+let bodyParser= require ('body-parser');
 let util = require('util');
 let path = require('path');
 let fs = require('fs');
 
 // Apply middleware//
-app.use(cors({origin: 'http://localhost:3000'}));
 
+app.use(cors());
+app.options('*', cors())
 app.use(express.json()); // Allows us to read JSON sent in `req.body`//
 
 app.use(router); // Apply our router as middleware
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 //This is so when the data in the form is submitted, it actually gets put in the JSON as an array object. 
 app.use(express.urlencoded({ extended: false }));
+
+let urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 //Applicable coding for reading and writing to JSON //
 
@@ -64,16 +62,17 @@ function validateContactInfo(request, response, next) {
   }
 }
 
+ 
 
 //Route for the general enquiry form landing page//
-app.get('/contactme', function (request, response) {
-  response.send('I am alive!');
+app.get('/contactme', cors(), function (request, response){
+  response.json(request.body);
 });
 
 //Route to create an entry when the user submits their form.//
-app.post('/contactme', validateContactInfo, async function (request, response, next) {
+app.post('/contactme', cors(), urlencodedParser, async function (request, response, next) {
   await addItem(request.body)
-  response.status(201).send('Form Submitted');
+  response.status(201).json(request.body);
   next();
 }
 );

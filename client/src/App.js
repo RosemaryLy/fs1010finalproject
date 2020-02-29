@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Form from './ContactForm';
 
+
+
 // inline css things...probably not the best practise? but *shrug* Future Me will fix this later//
 let style ={
   width:"100%",
@@ -25,11 +27,11 @@ let style3 = {
   height:"250px", 
   width:"250px",
 };
-
 let style4 ={
   width:"300px",
   height:"200px",
 };
+
 // end of css things//
 
 class App extends React.Component{
@@ -81,7 +83,7 @@ class App extends React.Component{
     <img className="myImages" id="myImg" src="images/dogmodelwebsite.png" alt={"Dog Model Portfolio Website | Sept '19"} style={style4}/>
     <div id="myModal" className="modal">
       <span className="close">&times;</span>
-      <img className="modal-content" id="img01"/>
+      <img className="modal-content" id="img01" alt =""/>
       <div id="caption"></div>
     </div>
   </div>
