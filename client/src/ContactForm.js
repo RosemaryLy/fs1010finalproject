@@ -15,7 +15,8 @@ function Form() {
        fetch("http://localhost:8080/contactme", {
           method: 'POST',
           headers: {
-          'Content-type': 'application/x-www-form-urlencoded'},
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'},
           body: JSON.stringify({firstName,lastName,email, message})
         })
         .then(response => response.json())

@@ -9,7 +9,7 @@ let readFile = util.promisify(fs.readFile);
 let writeFile = util.promisify(fs.writeFile);
 
 // Declare where the DB path is relative from where our `package.json` is
-let contactlistingpath = path.resolve('src/db/contactlisting.json');
+let contactlistingpath = path.resolve('api/db/contactlisting.json');
 
 
 // 

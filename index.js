@@ -29,7 +29,7 @@ let urlencodedParser = bodyParser.urlencoded({ extended: false });
 let readFile = util.promisify(fs.readFile);
 let writeFile = util.promisify(fs.writeFile);
 
-let contactlistingpath = path.resolve('src/db/contactlisting.json');
+let contactlistingpath = path.resolve('api/db/contactlisting.json');
 
 async function readContacts() {
   let filecontents = await readFile(contactlistingpath)
@@ -72,7 +72,7 @@ app.get('/contactme', cors(), function (request, response){
 //Route to create an entry when the user submits their form.//
 app.post('/contactme', cors(), urlencodedParser, async function (request, response, next) {
   await addItem(request.body)
-  response.status(201).json(request.body);
+  response.status(201).json(request.body).send("Your Message has been sent");
   next();
 }
 );
