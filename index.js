@@ -29,7 +29,7 @@ let urlencodedParser = bodyParser.urlencoded({ extended: false });
 let readFile = util.promisify(fs.readFile);
 let writeFile = util.promisify(fs.writeFile);
 
-let contactlistingpath = path.resolve('api/db/contactlisting.json');
+let contactlistingpath = path.resolve('server/db/contactlisting.json');
 
 async function readContacts() {
   let filecontents = await readFile(contactlistingpath)
