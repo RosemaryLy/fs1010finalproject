@@ -5,7 +5,7 @@ The goal of this project is to be able to send Form Data from React and have it 
 
 I also installed concurrently as a npm package so that the server and client can be run together within one terminal. 
 
-All you need to do is $npm run dev to start both front and back end. 
+All you need to do is `$npm run dev` to start both front and back end. 
 
 This type of architecture is fine if you're the only one who's working on the project and when it's a fairly basic and simple, but not the best way to work for the following reason:
 
